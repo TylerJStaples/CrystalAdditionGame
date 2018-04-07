@@ -1,0 +1,31 @@
+.info {
+    height: 70%;
+    width: 33%;
+    background: #777;
+}
+#gem1{
+    height: 0px;
+    width: 0px;
+    position: static;
+}
+#gem2{
+    height: 0px;
+    width: 0px;
+    position: relative;
+    left: 150px;
+}
+#gem3{
+    height: 0px;
+    width: 0px;
+    position: relative;
+    left: 300px;
+}
+#gem4{
+    height: 100px;
+    width: 0px;
+    position: relative;
+    left: 425px;
+}
+.h2 {
+    color: #000000;
+}

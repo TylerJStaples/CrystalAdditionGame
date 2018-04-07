@@ -1,0 +1,144 @@
+<html>
+<head>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous">
+    <title>Crystal Game</title>
+</head>
+<body>
+    <div class="info"><h2>Clicking each of the gems will give you a random number. 
+        Use the gems to make your number equal to the number displayed on the screen.</h2>
+        <div id="computerGuess"><h1>Goal: </h1></div>
+        <div id="userTotal"><h3>Total: </h3></div>
+        <div id="wins"></div>
+        <div id="losses"></div>
+    </div>
+    <div class="gems">
+        <div id="gem1">Big Gem
+            <img src="assets/images/BigGem.png">
+            </div>
+        <div id="gem2">Medium Gem
+            <img src="assets/images/MedGem.png">
+            </div>
+        <div id="gem3">Small Gem
+            <img src="assets/images/SmallGem.png">
+            </div>
+        <div id="gem4">Tiny Gem
+            <img src="assets/images/TinyGem.jpg">
+            </div>
+    </div>
+
+<script>
+    $(document).ready(function(){
+        var wins = 0;
+        var losses = 0;
+        var total = 0;
+        var goal = Math.floor(Math.random()*65)+30;
+        var bigGem = Math.floor(Math.random()*15)+11;
+        var medGem = Math.floor(Math.random()*10)+7;
+        var smallGem = Math.floor(Math.random()*6)+4;
+        var tinyGem =  Math.floor(Math.random()*3)+1;
+
+        function reset() {
+            goal = Math.floor(Math.random()*65)+30;
+            total = 0;
+            bigGem = Math.floor(Math.random()*15)+11;
+            medGem = Math.floor(Math.random()*10)+7;
+            smallGem = Math.floor(Math.random()*6)+4;
+            tinyGem =  Math.floor(Math.random()*3)+1;
+            console.log("----------");
+            console.log("GOAL: " + goal);
+            console.log("Big: " + bigGem);
+            console.log("Medium: " + medGem);
+            console.log("Small: " + smallGem);
+            console.log("Tiny: " + tinyGem);
+        }
+
+        console.log(goal);
+        console.log("Big: " + bigGem);
+        console.log("Medium: " + medGem);
+        console.log("Small: " + smallGem);
+        console.log("Tiny: " + tinyGem);
+
+        document.getElementById("wins").innerHTML = "<p>Wins: " + wins + "</p>";
+        document.getElementById("losses").innerHTML = "<p>Losses: " + losses + "</p>";
+        document.getElementById("computerGuess").innerHTML = "<h1>Goal: " + goal + "</h1>";
+        document.getElementById("userTotal").innerHTML = "<h3>Total: " + total + "</h3>";
+
+        $("#gem1").on("click", function(){
+            total = total + bigGem;
+            console.log(total);
+            if (total === goal) {
+                alert("You win!");
+                wins++;
+                reset();
+            }
+            if (total > goal) {
+                alert("You lose! Try again!");
+                losses++;
+                reset();
+            }
+        document.getElementById("wins").innerHTML = "<p>Wins: " + wins + "</p>";
+        document.getElementById("losses").innerHTML = "<p>Losses: " + losses + "</p>";
+        document.getElementById("computerGuess").innerHTML = "<h1>Goal: " + goal + "</h1>";
+        document.getElementById("userTotal").innerHTML = "<h3>Total: " + total + "</h3>";
+        });
+        $("#gem2").on("click", function(){
+            total = total + medGem;
+            console.log(total);
+            if (total === goal) {
+                alert("You win!");
+                wins++;
+                reset();
+            }
+            if (total > goal) {
+                alert("You lose! Try again!");
+                losses++;
+                reset();
+            } 
+        document.getElementById("wins").innerHTML = "<p>Wins: " + wins + "</p>";
+        document.getElementById("losses").innerHTML = "<p>Losses: " + losses + "</p>";
+        document.getElementById("computerGuess").innerHTML = "<h1>Goal: " + goal + "</h1>";
+        document.getElementById("userTotal").innerHTML = "<h3>Total: " + total + "</h3>"; 
+        });
+        $("#gem3").on("click", function(){
+            total = total + smallGem;
+            console.log(total);
+            if (total === goal) {
+                alert("You win!");
+                wins++;
+                reset();
+            }
+            if (total > goal) {
+                alert("You lose! Try again!");
+                losses++;
+                reset();
+            }
+        document.getElementById("wins").innerHTML = "<p>Wins: " + wins + "</p>";
+        document.getElementById("losses").innerHTML = "<p>Losses: " + losses + "</p>";
+        document.getElementById("computerGuess").innerHTML = "<h1>Goal: " + goal + "</h1>";
+        document.getElementById("userTotal").innerHTML = "<h3>Total: " + total + "</h3>";
+        });
+        $("#gem4").on("click", function(){
+            total = total + tinyGem;
+            console.log(total);
+            if (total === goal) {
+                alert("You win!");
+                wins++;
+                reset();
+            }
+            if (total > goal) {
+                alert("You lose! Try again!");
+                losses++;
+                reset();
+            }
+        document.getElementById("wins").innerHTML = "<p>Wins: " + wins + "</p>";
+        document.getElementById("losses").innerHTML = "<p>Losses: " + losses + "</p>";
+        document.getElementById("computerGuess").innerHTML = "<h1>Goal: " + goal + "</h1>";
+        document.getElementById("userTotal").innerHTML = "<h3>Total: " + total + "</h3>";
+        });
+    });
+</script>
+</body>
+</html>
